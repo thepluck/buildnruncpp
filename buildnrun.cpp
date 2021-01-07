@@ -1,8 +1,7 @@
+/// Usage: buildnrun taskName (inputFile) (outputFile)
 #include <bits/stdc++.h>
 
 using namespace std;
-
-/// buildnrun taskName (inputFile) (outputFile)
 
 int main(int argc, char *argv[]) {
     string cmd = "g++ -std=c++14 -Wall -Wextra -Wfloat-equal -Wshadow "
