@@ -4,8 +4,7 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    string cmd = "g++ -std=c++14 -Wall -Wextra -Wfloat-equal -Wshadow "
-    + string(argv[1]) + ".cpp -o " + string(argv[1]);
+    string cmd = "g++ -std=c++14 -Wall -Wextra -Wfloat-equal -Wshadow " + string(argv[1]) + ".cpp -o " + string(argv[1]);
     system(cmd.data());
     cmd = "./" + string(argv[1]);
     if (argc > 2) cmd += " < " + string(argv[2]);
