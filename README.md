@@ -6,6 +6,6 @@ Windows:
   - Add the directory contains the excutable files to path.
 
 Ubuntu
-  - Add the excutable files to /usr/bin
+  - Add the excutable files to /usr/bin //
 
 - Read the comment in these files for usage
