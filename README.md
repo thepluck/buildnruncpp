@@ -1,8 +1,7 @@
 # buildnruncpp
 
-- Compile these files with g++.
-
 - Building:
+  - Compile these files with g++.
 
   Ubuntu
     - Add the excutable files to /usr/bin.
