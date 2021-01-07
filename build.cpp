@@ -4,6 +4,7 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    string cmd = "g++ -std=c++14 -Wall -Wextra -Wfloat-equal -Wshadow " + string(argv[1]) + ".cpp -o " + string(argv[1]);
-    system(cmd.data());
+    char cmd[1000] = "g++ -std=c++14 -Wall -Wextra -Wfloat-equal -Wshadow ";
+    strcat(cmd, argv[1]); strcat(cmd, ".cpp -o "); strcat(cmd, argv[1]);
+    system(cmd); return 0;
 }
