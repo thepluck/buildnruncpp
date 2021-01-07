@@ -4,9 +4,12 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    string cmd = "./" + string(argv[1]);
-    if (argc > 2) cmd += " < " + string(argv[2]);
-    if (argc > 3) cmd += " > " + string(argv[3]);
-    system(cmd.data());
-    system("echo; echo");
+    char cmd[1000] = "./"; strcat(cmd, argv[1]);
+    if (argc > 2) {
+        strcat(cmd, " < "); strcat(cmd, argv[2]);
+    }
+    if (argc > 3) {
+        strcat(cmd, " > "); strcat(cmd, argv[3]);
+    }
+    system(cmd); system("echo; echo");
 }
