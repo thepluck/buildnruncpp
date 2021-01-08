@@ -1,4 +1,4 @@
-# buildnruncpp
+# Easy way to compile C++ for competitive programming
 
 - Building:
   - Compile these files with g++.
