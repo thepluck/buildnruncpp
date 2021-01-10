@@ -1,17 +1,13 @@
-/// Usage: buildnrun taskName (inputFile) (outputFile)
 #include <bits/stdc++.h>
 
 using namespace std;
 
+/// buildnrun taskName (inputFile) (outputFile)
 int main(int argc, char *argv[]) {
-    char cmd[1000] = "g++ -std=c++14 -Wall -Wextra -Wfloat-equal -Wshadow ";
-    strcat(cmd, argv[1]); strcat(cmd, ".cpp -o "); strcat(cmd, argv[1]);
-    strcat(cmd, "; ./"); strcat(cmd, argv[1]);
-    if (argc > 2) {
-        strcat(cmd, " < "); strcat(cmd, argv[2]);
+    if (string(argv[1]) == "--help") {
+        puts("buildnrun [taskName]\nOptions:\n    -i [inputFile]\t\tread input from [inputFile]\n    -o [outputFile]\t\twrite output to [outputFile]\n"); return 0;
     }
-    if (argc > 3) {
-        strcat(cmd, " > "); strcat(cmd, argv[3]);
-    }
-    system(cmd); system("echo; echo");
+    char cmd[1000] = "build "; strcat(cmd, argv[1]);
+    strcat(cmd, " run "); strcat(cmd, argv[1]);
+    system(cmd); return 0;
 }
