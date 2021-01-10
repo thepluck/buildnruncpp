@@ -3,6 +3,9 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
+    if (string(argv[1]) == "--help") {
+        puts("run [taskName]\nOptions:\n    -i [inputFile]\t\tread input from [inputFile]\n    -o [outputFile]\t\twrite output to [outputFile]\n"); return 0;
+    }
     char cmd[1000] = "./"; strcat(cmd, argv[1]);
     if (argc > 3) {
         if (string(argv[2]) == "-i")
@@ -19,5 +22,5 @@ int main(int argc, char *argv[]) {
         strcat(cmd, argv[5]);
 
     }
-    system(cmd); system("echo; echo");
+    system(cmd); system("echo.; echo.");
 }
