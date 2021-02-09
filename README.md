@@ -1,8 +1,6 @@
 # Easy way to compile C++ for competitive programming
 
 - Install g++.
-- Building:
-  - Compile these files with g++.
-  - Add the excutable files to /usr/bin.
-- Execute these commands with flag "--help" for usage.
-- You can change compiler flags in "build.cpp".
+- Add these scripts to /usr/bin
+- Execute these scripts with flag "-h" for usage.
+- You can change compiler flags in "build" script.
