@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-cmd="./"
+cmd="ulimit -s 262144 && ulimit -v 1048576 && ./"
 
 if [ $# -eq 0 ]
 then
