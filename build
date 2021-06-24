@@ -18,7 +18,7 @@ for arg in $*
 do
     if [ -e "$arg.cpp" ]
     then
-        eval "g++ -std=c++14 -O2 -Wall -Wextra -Wfloat-equal -Wshadow $1.cpp -o $1"
+        eval "g++ -std=gnu++17 -O2 -Wall -Wextra -Wfloat-equal -Wshadow -pipe -static $1.cpp -o $1"
         hasTaskName=true
         break
     fi
