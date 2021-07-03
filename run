@@ -2,13 +2,11 @@
 
 cmd="ulimit -s 262144 && ulimit -v 1048576 && ./"
 
-if [ $# -eq 0 ]
-then
+if [ $# -eq 0 ]; then
     exit 1
 fi
 
-if [ "$1" == "-h" ]
-then
+if [ "$1" == "-h" ]; then
     echo Usage:
     echo "  run TAKSNAME"
     echo Options:
@@ -19,36 +17,29 @@ fi
 
 hasTaskName=false
 
-for arg in $*
-do
-    if [ -e "$arg.cpp" ]
-    then
+for arg in $*; do
+    if [ -e "$arg.cpp" ]; then
         cmd+="$arg"
         hasTaskName=true
         break
     fi
 done
 
-if !($hasTaskName)
-then
+if !($hasTaskName); then
     echo run: Missing TAKSNAME
     exit 1
 fi
 
-for ((i=1;i<=$#;i++))
-do
-    if [ "${!i}" == "-i" ]
-    then
+for ((i=1;i<=$#;i++)); do
+    if [ "${!i}" == "-i" ] || [ "${!i}" == "<" ]; then
         j=$((i+1))
-        if [ -e "${!j}" ]
-        then
+        if [ -e "${!j}" ]; then
             cmd+=" < ${!j}"
         else
             echo "run: Missing INPUTFILE"
             exit 1
         fi
-    elif [ "${!i}" == "-o" ]
-    then
+    elif [ "${!i}" == "-o" ] || [ "${!i}" == ">" ]; then
         j=$((i+1))
         cmd+=" > ${!j}"
     fi

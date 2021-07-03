@@ -1,12 +1,10 @@
 #!/usr/bin/bash
 
-if [ $# -eq 0 ]
-then
+if [ $# -eq 0 ]; then
     exit 1
 fi
 
-if [ "$1" == "-h" ]
-then
+if [ "$1" == "-h" ]; then
     echo Usage:
     echo "  build TAKSNAME"
     exit 0
@@ -14,18 +12,15 @@ fi
 
 hasTaskName=false
 
-for arg in $*
-do
-    if [ -e "$arg.cpp" ]
-    then
+for arg in $*; do
+    if [ -e "$arg.cpp" ]; then
         eval "g++ -std=gnu++17 -O2 -Wall -Wextra -Wfloat-equal -Wshadow -pipe -static $1.cpp -o $1"
         hasTaskName=true
         break
     fi
 done
 
-if !($hasTaskName)
-then
+if !($hasTaskName); then
     echo build: Missing TAKSNAME
     exit 1
 fi

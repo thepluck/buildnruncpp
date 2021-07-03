@@ -1,12 +1,10 @@
 #!/usr/bin/bash
 
-if [ $# -eq 0 ]
-then
+if [ $# -eq 0 ]; then
     exit 1
 fi
 
-if [ "$1" == "-h" ]
-then
+if [ "$1" == "-h" ]; then
     echo Usage:
     echo "  buildnrun TAKSNAME"
     echo Options:
@@ -17,18 +15,15 @@ fi
 
 hasTaskName=false
 
-for arg in $*
-do
-    if [ -e "$arg.cpp" ]
-    then
+for arg in $*; do
+    if [ -e "$arg.cpp" ]; then
         build $arg
         hasTaskName=true
         break
     fi
 done
 
-if !($hasTaskName)
-then
+if !($hasTaskName); then
     echo buildnrun: Missing TAKSNAME
     exit 1
 fi
